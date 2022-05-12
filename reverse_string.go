@@ -1,18 +1,16 @@
 package reverse_string
 
-func reverse(input string) string {
-	var result []uint8
-	length := len(input) - 1
+import "fmt"
 
-	for i, _ := range input {
-		result = append(result, input[length-i])
+func reverse(input string) (reversed string) {
+	for _, runeUnit := range input {
+		reversed = fmt.Sprintf("%c%s", runeUnit, reversed)
 	}
 
-	return string(result)
+	return
 }
 
 func ReverseString(input string) (output string) {
-	// solution goes here
 	output = reverse(input)
 
 	return
